@@ -1,0 +1,56 @@
+@import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+html, body{
+    background-color: #000;
+    color: #FFF;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.btn-circle.btn-xl { 
+    width: 80px; 
+    height: 80px; 
+    padding: 10px 16px; 
+    border-radius: 45px; 
+    font-size: 24px; 
+    text-align: center; 
+}
+.alert{
+    margin: 0;
+    border-radius: 0;
+    text-align: center;
+}
+
+.navbar{
+    background-color: #1F1F1F;
+    color: #FFF;
+}
+
+a{
+    color:#FFFFFF;
+}
+
+a:hover{
+    color:#007BFF !important;
+}
+
+.modal-content{
+    background-color: #1F1F1F;
+}
+
+.close{
+    color: #FFF;
+    text-shadow: none !important;
+}
+.close :hover{
+    color: #000;
+    text-shadow: none !important;
+}
+
+.card{
+    background-color: #1F1F1F;
+    color: #FFF;
+}
+

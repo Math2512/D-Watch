@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Feed!' %}
+
+{% block body %}
+
+<div class="row">
+    <div class="col-md-12">
+        {% for category in categories %}
+            {{category.nom}}
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
