@@ -16,4 +16,10 @@ require('@fortawesome/fontawesome-free/js/all.js');
 
 $(document).ready(function() {
     $('[data-toggle="popover"]').popover();
+ 
 });
+
+$('.submit').click(function(){
+    $('#wait-overlay').show()
+});
+

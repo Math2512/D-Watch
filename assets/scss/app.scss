@@ -54,3 +54,24 @@ a:hover{
     color: #FFF;
 }
 
+
+.card-img-top{
+    transition: 0.3s ease-out;
+    z-index: 0;
+    &:hover{
+        transform: scale(1.075);
+        opacity: 0.1;
+        
+    }
+}
+  
+.card-img-caption .card-img-top {
+  z-index: 0;
+}
+    
+.card-img-caption .card-text {
+  text-align: center;
+  width: 100%;
+  margin: 25% 0;
+  position: absolute;
+  z-index: 1}
