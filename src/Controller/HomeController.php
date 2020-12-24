@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\Article;
-use App\Form\ArticleType;
 use App\Repository\ArticleRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -27,6 +26,7 @@ class HomeController extends AbstractController
      */
     public function index(Request $request, ArticleRepository $repoArticle): Response
     {
+        /*
         $article = new Article;
         $form = $this->createForm(ArticleType::class, $article); 
 
@@ -66,11 +66,9 @@ class HomeController extends AbstractController
             $this->em->persist($article);
             $this->em->flush();
         }
-        
+        */
         $liste = $repoArticle->findBy([], ['creatAt' => 'DESC']);
         return $this->render('home/index.html.twig', [
-            'form' => $form->createView(),
-            'articles'=> $liste
         ]);
     }
 }
