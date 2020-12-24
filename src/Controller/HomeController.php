@@ -66,8 +66,8 @@ class HomeController extends AbstractController
             $this->em->persist($article);
             $this->em->flush();
         }
-        */
         $liste = $repoArticle->findBy([], ['creatAt' => 'DESC']);
+        */
         return $this->render('home/index.html.twig', [
         ]);
     }
