@@ -9,6 +9,7 @@ use ApiPlatform\Core\Bridge\Doctrine\Orm\Extension\QueryItemExtensionInterface;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Extension\QueryCollectionExtensionInterface;
 use App\Entity\Article;
 use App\Entity\Category;
+use App\Entity\User;
 
 class CurrentUserExtension implements QueryCollectionExtensionInterface, QueryItemExtensionInterface{
     
@@ -23,10 +24,13 @@ class CurrentUserExtension implements QueryCollectionExtensionInterface, QueryIt
     {
         $user = $this->security->getUser();
 
-        if($resourceClass === Category::class || $resourceClass === Article::class){
+        if($resourceClass === Category::class || $resourceClass === Article::class || $resourceClass === User::class){
             $rootAlias = $queryBuilder->getRootAliases()[0];
 
             if($resourceClass === Category::class){
+                $queryBuilder->andWhere("$rootAlias.user = :user");
+            }
+            else if($resourceClass === User::class){
                 $queryBuilder->andWhere("$rootAlias.user = :user");
             }
             else if($resourceClass === Article::class){
