@@ -31,7 +31,7 @@ class CurrentUserExtension implements QueryCollectionExtensionInterface, QueryIt
                 $queryBuilder->andWhere("$rootAlias.user = :user");
             }
             else if($resourceClass === User::class){
-                $queryBuilder->andWhere("$rootAlias.user = :user");
+                $queryBuilder->andWhere("$rootAlias = :user");
             }
             else if($resourceClass === Article::class){
                 $queryBuilder->join("$rootAlias.category", "c")
